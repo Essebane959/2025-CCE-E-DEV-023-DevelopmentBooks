@@ -30,6 +30,8 @@ public class PriceCalculatorService {
             total = total.subtract(total.multiply(new BigDecimal("0.10")));
         } else if (distinct.size() == 4 && quantity == 4) {
             total = total.subtract(total.multiply(new BigDecimal("0.20")));
+        } else if (distinct.size() == 5 && quantity == 5) {
+            total = total.subtract(total.multiply(new BigDecimal("0.25")));
         }
 
         return total.setScale(2, RoundingMode.HALF_UP);
