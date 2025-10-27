@@ -1,7 +1,6 @@
 package com.jwd.developmentbooks.service;
 
-import com.jwd.developmentbooks.Book;
-import com.jwd.developmentbooks.BookService;
+import com.jwd.developmentbooks.model.Book;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

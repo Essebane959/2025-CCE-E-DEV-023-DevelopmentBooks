@@ -1,4 +1,6 @@
-package com.jwd.developmentbooks;
+package com.jwd.developmentbooks.service;
+
+import com.jwd.developmentbooks.model.Book;
 
 import java.math.BigDecimal;
 import java.util.List;

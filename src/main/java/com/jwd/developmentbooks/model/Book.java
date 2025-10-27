@@ -1,4 +1,4 @@
-package com.jwd.developmentbooks;
+package com.jwd.developmentbooks.model;
 
 import java.math.BigDecimal;
 

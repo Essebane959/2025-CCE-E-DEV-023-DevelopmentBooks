@@ -1,7 +1,6 @@
 package com.jwd.developmentbooks.service;
 
-import com.jwd.developmentbooks.BasketItem;
-import com.jwd.developmentbooks.PriceCalculatorService;
+import com.jwd.developmentbooks.model.BasketItem;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
