@@ -24,7 +24,7 @@ class BookServiceTest {
 
     @Test
     void givenExistingIsbn_whenGetBookByIsbn_thenReturnBook() {
-        Book book = service.getBookByIsbn("1234567891452");
+        Book book = service.getBookByIsbn("9780132350884");
         assertNotNull(book);
         assertEquals("Clean Code", book.title());
     }
