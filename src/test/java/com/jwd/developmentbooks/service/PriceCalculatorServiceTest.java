@@ -69,4 +69,17 @@ class PriceCalculatorServiceTest {
         assertEquals(new BigDecimal("160.00"), total);
     }
 
+    @Test
+    void givenFiveDifferentBooks_whenCalculateTotal_thenApplyTwentyFivePercentDiscount() {
+        List<BasketItem> basket = List.of(
+                new BasketItem("9780132350884", 1),
+                new BasketItem("9780137081073", 1),
+                new BasketItem("9780134494166", 1),
+                new BasketItem("9780321146533", 1),
+                new BasketItem("9780131177055", 1)
+        );
+        BigDecimal total = calculator.total(basket);
+        assertEquals(new BigDecimal("187.50"), total);
+    }
+
 }
