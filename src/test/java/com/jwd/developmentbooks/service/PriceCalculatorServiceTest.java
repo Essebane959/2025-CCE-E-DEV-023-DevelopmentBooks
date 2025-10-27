@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class PriceCalculatorTest {
+class PriceCalculatorServiceTest {
 
-    private final PriceCalculator calculator = new PriceCalculator();
+    private final PriceCalculatorService calculator = new PriceCalculatorService();
 
     @Test
     void givenOneBook_whenCalculateTotal_thenReturn50() {

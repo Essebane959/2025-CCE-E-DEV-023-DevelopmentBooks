@@ -7,6 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class BookServiceTest {
 
@@ -30,5 +31,10 @@ class BookServiceTest {
     void givenUnknownIsbn_whenGetBookByIsbn_thenReturnNull() {
         Book book = service.getBookByIsbn("0000000000000");
         assertNull(book);
+    }
+
+    @Test
+    void givenNullIsbn_whenGetBookByIsbn_thenThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> service.getBookByIsbn(null));
     }
 }
