@@ -33,4 +33,15 @@ class PriceCalculatorServiceTest {
         List<BasketItem> basket = null;
         assertThrows(IllegalArgumentException.class, () -> calculator.total(basket));
     }
+
+    @Test
+    void givenTwoDifferentBooks_whenCalculateTotal_thenApplyFivePercentDiscount() {
+        List<BasketItem> basket = List.of(
+                new BasketItem("9780132350884", 1),
+                new BasketItem("9780137081073", 1)
+        );
+        BigDecimal total = calculator.total(basket);
+        assertEquals(new BigDecimal("95.00"), total);
+    }
+
 }
