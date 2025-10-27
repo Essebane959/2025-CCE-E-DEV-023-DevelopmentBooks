@@ -5,6 +5,8 @@ import com.jwd.developmentbooks.model.BasketItem;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class PriceCalculatorService {
     private static final BigDecimal UNIT = new BigDecimal("50.00");
@@ -16,9 +18,16 @@ public class PriceCalculatorService {
         if (items.isEmpty()) {
             return BigDecimal.ZERO;
         }
+
         int quantity = items.stream().mapToInt(BasketItem::quantity).sum();
-        return UNIT
-                .multiply(BigDecimal.valueOf(quantity))
-                .setScale(2, RoundingMode.HALF_UP);
+        Set<String> distinct = items.stream().map(BasketItem::isbn).collect(Collectors.toSet());
+
+        BigDecimal total = UNIT.multiply(BigDecimal.valueOf(quantity));
+
+        if (distinct.size() == 2 && quantity == 2) {
+            total = total.subtract(total.multiply(new BigDecimal("0.05")));
+        }
+
+        return total.setScale(2, RoundingMode.HALF_UP);
     }
 }
