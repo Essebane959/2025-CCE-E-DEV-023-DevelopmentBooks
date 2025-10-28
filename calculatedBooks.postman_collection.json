@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "d6f822d6-6379-492a-8b28-0e74542c5787",
+		"name": "calculatedBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49611942",
+		"_collection_link": "https://essebane959-5730332.postman.co/workspace/Jwd's-Workspace~4aefd746-3e7c-44a4-825f-87139bc26500/collection/49611942-d6f822d6-6379-492a-8b28-0e74542c5787?action=share&source=collection_link&creator=49611942"
+	},
+	"item": [
+		{
+			"name": "checkoutBasket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  { \"isbn\": \"9780132350884\", \"quantity\": 2 },\r\n  { \"isbn\": \"9780137081073\", \"quantity\": 2 },\r\n  { \"isbn\": \"9780134494166\", \"quantity\": 2 },\r\n  { \"isbn\": \"9780321146533\", \"quantity\": 1 },\r\n  { \"isbn\": \"9780131177055\", \"quantity\": 1 }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/checkout",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
