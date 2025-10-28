@@ -82,4 +82,19 @@ class PriceCalculatorServiceTest {
         assertEquals(new BigDecimal("187.50"), total);
     }
 
+    @Test
+    void givenBasketWithDuplicates_whenCalculateTotal_thenApplyOptimalDiscounts() {
+        List<BasketItem> basket = List.of(
+                new BasketItem("9780132350884", 2),
+                new BasketItem("9780137081073", 2),
+                new BasketItem("9780134494166", 2),
+                new BasketItem("9780321146533", 1),
+                new BasketItem("9780131177055", 1)
+        );
+
+        BigDecimal total = calculator.total(basket);
+
+        assertEquals(new BigDecimal("322.50"), total);
+    }
+
 }
