@@ -21,6 +21,13 @@ public class CheckoutController {
 
     @PostMapping("/checkout")
     public ResponseEntity<Map<String, String>> checkout(@RequestBody List<BasketItem> basket) {
+        if (basket == null || basket.isEmpty()) {
+            throw new IllegalArgumentException("Basket cannot be empty");
+        }
+        if (basket.stream().anyMatch(item -> item.quantity() <= 0)) {
+            throw new IllegalArgumentException("Quantities must be positive");
+        }
+
         BigDecimal total = calculator.total(basket);
         return ResponseEntity.ok(Map.of("total", total.toPlainString()));
     }
