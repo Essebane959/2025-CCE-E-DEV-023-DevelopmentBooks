@@ -1,10 +1,12 @@
 package com.jwd.developmentbooks.service;
 
 import com.jwd.developmentbooks.model.Book;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@Service
 public class BookService {
     private static final BigDecimal PRICE = new BigDecimal("50.00");
 
